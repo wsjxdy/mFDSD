@@ -123,7 +123,7 @@ class Compute_distill_loss:
                                     torch.zeros(single_scale_obj_difference.shape).to(device)) * 1
                 single_scale_obj_difference = single_scale_obj_difference * obj_mask
                 obj_distillation_loss = torch.mul(single_scale_obj_difference, single_scale_obj_difference)
-                obj_distillation_loss = torch.mean(obj_distillation_loss)  # dim=0 逐行求平均
+                obj_distillation_loss = torch.mean(obj_distillation_loss)  # dim=0 
                 multi_scale_pro_distillation_loss.append(obj_distillation_loss)
                 return obj_mask
 
@@ -359,7 +359,7 @@ class Compute_distill_loss:
             feature_distillation_loss = torch.abs(feature_difference)
             feature_distillation_loss = torch.mul(torch.mul(feature_distillation_loss, 1 - mask_cos[0][i]),
                                                   1 - mask_cos[1][i])
-            multi_scale_back_distillation_loss.append(torch.mean(feature_distillation_loss))  ##均衡大小目標效果
+            multi_scale_back_distillation_loss.append(torch.mean(feature_distillation_loss))  
 
         del mask_cos
         torch.cuda.empty_cache()
