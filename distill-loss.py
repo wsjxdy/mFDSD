@@ -138,7 +138,7 @@ class Compute_distill_loss:
             singer_scale_current_teacher_cls = singer_scale_current_teacher_cls[:, :, :, :, :num_category_need_dis]
             singer_scale_current_student_cls = singer_scale_current_student_cls[:, :, :, :, :num_category_need_dis]
 
-            # 原版cls损失
+            # 
             mean_of_teacher_cls = torch.mean(singer_scale_current_teacher_cls, dim=-1, keepdim=True)
             mean_of_student_cls = torch.mean(singer_scale_current_student_cls, dim=-1, keepdim=True)
             normalized_teacher_cls = torch.sub(singer_scale_current_teacher_cls, mean_of_teacher_cls)
