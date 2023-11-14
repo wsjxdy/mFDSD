@@ -2,8 +2,9 @@
 <p align="center">
 This is the code of distillation losses in mFDSD
 </p>
+
 ### Base detector and　enviroment
-Our method can theoretically be added to any detector, default is Yolov5.　The enviroment of our mFDSD follows that of the choosen detector.
+Our method can theoretically be added to any detector, default is Yolov5. The enviroment of our mFDSD follows that of the choosen detector.
 
 ### Introduction of functions in [distill-loss.py](https://github.com/wsjxdy/mFDSD/blob/master/distill-loss.py)
 * function:　[mask_feature()](https://github.com/wsjxdy/mFDSD/blob/master/distill-loss.py) is the function to perform MFD
